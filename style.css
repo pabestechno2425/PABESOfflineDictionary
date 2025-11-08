@@ -1,0 +1,208 @@
+/* Color palette */
+:root {
+  --main-green: #6cc78d;
+  --light-green: #8ae1a7;
+  --white-soft: #f9fff9;
+  --bg-gray: #efefef;
+}
+
+/* Reset and layout */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-gray);
+  overflow-x: hidden;
+  color: #2f3d33;
+}
+
+.home-content {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Background Circles */
+.bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.25;
+  z-index: 0;
+  animation: float 10s ease-in-out infinite alternate;
+}
+
+.circle1 {
+  width: 280px;
+  height: 280px;
+  top: -60px;
+  left: -40px;
+  background: var(--main-green);
+  animation-delay: 0s;
+}
+
+.circle2 {
+  width: 320px;
+  height: 320px;
+  bottom: -70px;
+  right: -70px;
+  background: var(--light-green);
+  animation-delay: 2s;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(20px, -15px) scale(1.05);
+  }
+  100% {
+    transform: translate(-15px, 20px) scale(1);
+  }
+}
+
+/* Main Container */
+.main-container {
+  position: relative;
+  z-index: 1;
+  padding: 30px 20px 60px;
+  max-width: 800px;
+}
+
+/* Logo */
+.logo-container {
+  margin-bottom: 10px;
+  animation: logo-float 6s ease-in-out infinite alternate;
+}
+
+@keyframes logo-float {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-12px);
+  }
+}
+
+.app-logo {
+  width: 140px;
+  height: 140px;
+  border-radius: 30px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease;
+}
+.app-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Texts */
+.app-title {
+  color: var(--main-green);
+  font-size: 1.8rem;
+  margin-top: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.subtitle {
+  color: #3b4d3f;
+  font-size: 1rem;
+  margin: 10px 0 25px;
+  line-height: 1.5;
+}
+
+/* Download Buttons */
+.download-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+.download-btn ion-icon {
+  margin-right: 10px;
+  font-size: 22px;
+}
+
+.download-btn.android {
+  background: linear-gradient(135deg, #5fc88e, #7ce3a9);
+}
+.download-btn.windows {
+  background: linear-gradient(135deg, #4e9eff, #6cc78d);
+}
+
+.download-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+
+/* Screenshots */
+.screenshots {
+  margin-top: 40px;
+}
+.screenshots h2 {
+  color: var(--main-green);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+.screenshot-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.screenshot-gallery img {
+  width: 120px;
+  height: 220px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+.screenshot-gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+  margin-top: 60px;
+  font-size: 0.85rem;
+  color: #3c4a3f;
+  opacity: 0.8;
+}
+.footer p {
+  margin: 4px 0;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .app-logo {
+    width: 120px;
+    height: 120px;
+  }
+  .app-title {
+    font-size: 1.5rem;
+  }
+  .download-btn {
+    font-size: 0.9rem;
+  }
+  .screenshot-gallery img {
+    width: 100px;
+    height: 180px;
+  }
+}
